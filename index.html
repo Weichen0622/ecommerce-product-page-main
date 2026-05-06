@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Noto+Sans+TC:wght@100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__left">
+      <button class="navbar__menu-btn">
+        <img src="images/icon-menu.svg" alt="menu">
+      </button>
+      <img class="navbar__logo" src="images/logo.svg" alt="logo">
+      <div class="navbar__links">
+        <button class="navbar__close-btn">
+          <img src="images/icon-close.svg" alt="close">
+        </button>
+        <ul>
+          <li>
+            <a href="#">Collections</a>
+          </li>
+          <li>
+            <a href="#">Men</a>
+          </li>
+          <li>
+            <a href="#">Women</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar__cart-avatar">
+      <button class="navbar__cart-btn">
+        <img src="images/icon-cart.svg" alt="cart">
+        <span class="navbar__cart-badge">0</span>
+      </button>
+      <img class="navbar__avatar" src="images/image-avatar.png" alt="">
+    </div>
+  </nav>
+  <hr class="horizontalLine">
+  <main class="product">
+    <div class="product__gallery">
+      <figure class="product__img">
+        <button class="product__prev-btn">
+          <img class="product__prev-btn-img" src="images/icon-previous.svg" alt="previous">
+        </button>
+        <img class="product__product-img" src="images/image-product-1.jpg" alt="product image">
+        <button class="product__next-btn">
+          <img class="product__next-btn-img" src="images/icon-next.svg" alt="next">
+        </button>
+      </figure>
+      <ul class="product__thumbnail">
+        <li>
+          <button class="product__thumbnail-btn" data-img="images/image-product-1.jpg">
+            <img class="product__thumbnail-img" src="images/image-product-1-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="product__thumbnail-btn" data-img="images/image-product-2.jpg">
+            <img class="product__thumbnail-img" src="images/image-product-2-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="product__thumbnail-btn" data-img="images/image-product-3.jpg">
+            <img class="product__thumbnail-img" src="images/image-product-3-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="product__thumbnail-btn" data-img="images/image-product-4.jpg">
+            <img class="product__thumbnail-img" src="images/image-product-4-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="product__content">
+      <article class="product__info">
+        <span>SNEAKER COMPANY</span>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+      </article>
+      <div class="product__pricing">
+        <div class="product__price-discount">
+          <span class="product__price">$125.00</span>
+          <span class="product__discount">50%</span>
+        </div>
+        <span class="product__original-price"><del>$250.00</del></span>
+      </div>
+      <div class="product__purchase">
+        <div class="product__quantity-container">
+          <button class="product__minus-btn">
+            <img src="images/icon-minus.svg" alt="minus button">
+          </button>
+          <input class="product__quantity" type="number" name="quantity" value="0">
+          <button class="product__plus-btn">
+            <img src="images/icon-plus.svg" alt="plus button">
+          </button>
+        </div>
+        <button class="product__add-to-cart">
+          <img src="images/icon-cart.svg" alt="">
+          <span>Add to cart</span>
+        </button>
+      </div>
+    </div>
+  </main>
+  <div class="shopping-cart">
+    <div class="shopping-cart__container">
+      <div class="shopping-cart__title">
+        <span>Cart</span>
+      </div>
+      <hr>
+      <div class="shopping-cart__text">
+        <span>Your cart is empty.</span>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <div class="lightbox">
+    <div class="lightbox__container">
+      <button class="lightbox__close-btn">
+        <img src="images/icon-close.svg" alt="close">
+      </button>
+      <figure class="lightbox__img">
+        <button class="lightbox__prev-btn">
+          <img src="images/icon-previous.svg" alt="previous">
+        </button>
+        <img class="lightbox__product-img" src="images/image-product-1.jpg" alt="">
+        <button class="lightbox__next-btn">
+          <img src="images/icon-next.svg" alt="next">
+        </button>
+      </figure>
+      <ul class="lightbox__thumbnail">
+        <li>
+          <button class="lightbox__thumbnail-btn" data-img="images/image-product-1.jpg" data-idx="0">
+            <img class="lightbox__thumbnail-img" src="images/image-product-1-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="lightbox__thumbnail-btn" data-img="images/image-product-2.jpg" data-idx="1">
+            <img class="lightbox__thumbnail-img" src="images/image-product-2-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="lightbox__thumbnail-btn" data-img="images/image-product-3.jpg" data-idx="2">
+            <img class="lightbox__thumbnail-img" src="images/image-product-3-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+        <li>
+          <button class="lightbox__thumbnail-btn" data-img="images/image-product-4.jpg" data-idx="3">
+            <img class="lightbox__thumbnail-img" src="images/image-product-4-thumbnail.jpg" alt="product image">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
