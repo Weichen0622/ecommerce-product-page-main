@@ -427,31 +427,32 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--color-black);
-    z-index: 10;
-    justify-content: center;
-    align-items: center;
+    z-index: 3;
 }
 
 .lightbox--active {
-    display: flex;
+    display: block;
 }
 
 .lightbox__container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    z-index: 3;
 }
 
 .lightbox__close-btn {
+    align-self: flex-end;
+    margin-bottom: 15px;
+    margin-right: 25px;
     background: none;
     border: none;
-    margin-left: 580px;
-    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .lightbox__close-btn img {
@@ -467,8 +468,9 @@ body {
     background: var(--color-white);
     border: none;
     position: absolute;
-    top: 270px;
+    top: 50%;
     left: 0px;
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -486,8 +488,9 @@ body {
     background: var(--color-white);
     border: none;
     position: absolute;
-    top: 270px;
+    top: 50%;
     right: 0px;
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -507,6 +510,7 @@ body {
 .lightbox__thumbnail-btn {
     border-radius: 10px;
     overflow: hidden;
+    border: none;
 }
 
 .lightbox__thumbnail-btn--active {
@@ -523,6 +527,21 @@ body {
 
 .lightbox__thumbnail-img:hover {
     opacity: 50%;
+}
+
+.lightbox__overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2;
+}
+
+.lightbox__overlay--active {
+    display: block;
 }
 
 @media (min-width: 900px) {

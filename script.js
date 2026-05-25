@@ -123,10 +123,29 @@ let curIdx = 0;
 let prevBtn = document.querySelector(".product__prev-btn");
 let nextBtn = document.querySelector(".product__next-btn");
 let productImg = document.querySelector(".product__product-img");
+let lightboxOverlay = document.querySelector(".lightbox__overlay");
 
 productImg.addEventListener("click", () => {
     if(window.innerWidth >= 900) {
+        lightBoxCurIdx = 0;
+        lightboxImg.src = images[0];
+
+        lightboxThumbnailBtns.forEach((btn, index) => {
+            btn.classList.remove("lightbox__thumbnail-btn--active");
+            if(index === 0) {
+                btn.classList.add("lightbox__thumbnail-btn--active");
+            }
+        });
+        
         lightBox.classList.toggle("lightbox--active");
+        lightboxOverlay.classList.toggle("lightbox__overlay--active");
+    }
+});
+
+lightboxOverlay.addEventListener("click", () => {
+    if(window.innerWidth >= 900) {
+        lightBox.classList.remove("lightbox--active");
+        lightboxOverlay.classList.remove("lightbox__overlay--active");
     }
 });
 
@@ -186,6 +205,7 @@ lightboxThumbnailBtns.forEach((btn) => {
 lightBoxCloseBtn.addEventListener("click", () => {
     if(window.innerWidth >= 900) {
         lightBox.classList.remove("lightbox--active");
+        lightboxOverlay.classList.remove("lightbox__overlay--active");
     }
 });
 
